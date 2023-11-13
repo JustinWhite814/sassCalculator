@@ -1,0 +1,47 @@
+.calculator {
+    // makes calc only take up a 3rd of the screen
+    width: (100vw / 3);
+    // help[s with phone sizes
+    min-width: 350px;
+    height: 60vh;
+    // puts two tables side by side
+    display: flex;
+    background-color: gray;
+    // moves each part of the calc apart
+    justify-content: space-between;
+    table {
+        height: 100%;
+
+        td {
+            text-align: center;
+            button {
+                width: 85%;
+                height: 8vh;
+            }
+            #display-box {
+                width: 85%;
+                height: 8vh;
+                background-color: blue;
+            }
+
+        }
+    }
+    .number-pad {
+        // needs to take up 3/4 of the calculator
+        width: 75%;
+        background-color: silver;
+        &:hover {
+            @for $i from 1 through 2 {
+                .btn-type-#{$i}{
+                    width: 75%;
+                }
+            }
+        }
+    }
+
+    .operations-pad {
+        width: 25%;
+        background-color: black;
+    }
+   
+}

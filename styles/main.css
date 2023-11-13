@@ -1,0 +1,37 @@
+.calculator {
+  width: 33.3333333333vw;
+  min-width: 350px;
+  height: 60vh;
+  display: flex;
+  background-color: gray;
+  justify-content: space-between;
+}
+.calculator table {
+  height: 100%;
+}
+.calculator table td {
+  text-align: center;
+}
+.calculator table td button {
+  width: 85%;
+  height: 8vh;
+}
+.calculator table td #display-box {
+  width: 85%;
+  height: 8vh;
+  background-color: blue;
+}
+.calculator .number-pad {
+  width: 75%;
+  background-color: silver;
+}
+.calculator .number-pad:hover .btn-type-1 {
+  width: 75%;
+}
+.calculator .number-pad:hover .btn-type-2 {
+  width: 75%;
+}
+.calculator .operations-pad {
+  width: 25%;
+  background-color: black;
+}/*# sourceMappingURL=main.css.map */
