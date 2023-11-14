@@ -1,14 +1,68 @@
+/* IMPORT FONT
+----------------------------------------------------------- */
+@import url("https://fonts.googleapis.com/css2?family=Orbitron&display=swap");
+/* DEFINE GLOBAL VARIABLES & THEME MIXIN
+----------------------------------------------------------- */
+/* RESET DEFAULT STYLES
+----------------------------------------------------------- */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Orbitron", sans-serif;
+}
+
+/* SET UP PAGE LAYOUT
+----------------------------------------------------------- */
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: cover;
+  background: url(../assets/dark-bg.png) no-repeat center center fixed;
+}
+body .calculator {
+  background-color: #212333;
+}
+body .calculator #display-box {
+  background-color: #dcdbe1;
+  color: #212333;
+}
+body .calculator button {
+  border: solid black 0.5px;
+}
+body .calculator button:active {
+  background-color: #dcdbe1;
+  color: #212333;
+}
+
+/* DEFINE CALCULATOR STYLES
+----------------------------------------------------------- */
+h1 {
+  justify-self: start;
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: auto;
+  color: #dcdbe1;
+  font-size: calc(30px + 2vh);
+}
+
 .calculator {
   width: 33.3333333333vw;
-  min-width: 400px;
+  min-width: 350px;
   height: 60vh;
+  min-height: 400px;
+  padding: 20px;
+  margin-bottom: auto;
+  box-shadow: black 0px 25px 25px;
+  border-radius: 1em;
   display: flex;
-  background-color: gray;
   justify-content: space-between;
 }
 .calculator table {
   height: 100%;
-  background-color: darkcyan;
 }
 .calculator table td {
   text-align: center;
@@ -16,11 +70,20 @@
 .calculator table td button {
   width: 85%;
   height: 8vh;
+  min-height: 60px;
+  background-color: #64278f;
+  border-radius: 0.5rem;
+  outline: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: #dcdbe1;
   transition: all ease 0.5s;
 }
-.calculator table td #display-box {
-  height: 8vh;
-  background-color: beige;
+.calculator table td button:active {
+  text-shadow: black 0 0 15px;
+}
+.calculator table td .btn-type-3 {
+  background-color: #377771;
 }
 .calculator .number-pad {
   width: 75%;
@@ -30,13 +93,24 @@
   filter: brightness(0.4);
 }
 .calculator .number-pad:hover + .operations-pad .btn-type-2 {
-  font-weight: 900;
-  font-size: 2rem;
+  font-size: 2.25rem;
 }
 .calculator .number-pad:hover button:hover {
   width: 85%;
   filter: brightness(1);
 }
+.calculator .number-pad #display-box {
+  border: solid black 0.5px;
+  border-radius: 5px;
+  padding: 1rem;
+  height: 8vh;
+  min-height: 60px;
+  font-size: 2rem;
+  text-align: right;
+}
 .calculator .operations-pad {
   width: 25%;
+}
+.calculator .operations-pad button {
+  background-color: #dd417f;
 }/*# sourceMappingURL=main.css.map */
