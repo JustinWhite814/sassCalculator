@@ -2,26 +2,38 @@
     // makes calc only take up a 3rd of the screen
     width: (100vw / 3);
     // help[s with phone sizes
-    min-width: 350px;
+    min-width: 400px;
     height: 60vh;
     // puts two tables side by side
     display: flex;
     background-color: gray;
     // moves each part of the calc apart
     justify-content: space-between;
-    table {
-        height: 100%;
 
+    @mixin setTheme($theme: dark) {
+        @if $theme=='dark'{
+            background-color: black;
+    }@else{
+        background-color: darkcyan;
+    }
+}
+    table {
+
+        height: 100%;
+        @include setTheme('light'); 
+
+        
         td {
             text-align: center;
             button {
                 width: 85%;
                 height: 8vh;
+                transition: all ease 0.5s;
             }
             #display-box {
-                width: 85%;
+                // width: 85%;
                 height: 8vh;
-                background-color: blue;
+                background-color: beige;
             }
 
         }
@@ -29,19 +41,33 @@
     .number-pad {
         // needs to take up 3/4 of the calculator
         width: 75%;
-        background-color: silver;
+      
         &:hover {
             @for $i from 1 through 2 {
-                .btn-type-#{$i}{
-                    width: 75%;
+                @if $i == 1 {
+                    .btn-type-#{$i}{
+                        width: 75%;
+                        // darken the buttons
+                        filter: brightness(0.4)
+                    }
+                } @else {
+                    &+.operations-pad .btn-type-#{$i}{
+                       font-weight: 900;
+                       font-size: 2rem;
+                    }
                 }
+                
+            }
+            button:hover {
+                width: 85%;
+                filter: brightness(1);
             }
         }
     }
 
     .operations-pad {
         width: 25%;
-        background-color: black;
+    
     }
    
 }

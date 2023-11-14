@@ -1,6 +1,6 @@
 .calculator {
   width: 33.3333333333vw;
-  min-width: 350px;
+  min-width: 400px;
   height: 60vh;
   display: flex;
   background-color: gray;
@@ -8,6 +8,7 @@
 }
 .calculator table {
   height: 100%;
+  background-color: darkcyan;
 }
 .calculator table td {
   text-align: center;
@@ -15,23 +16,27 @@
 .calculator table td button {
   width: 85%;
   height: 8vh;
+  transition: all ease 0.5s;
 }
 .calculator table td #display-box {
-  width: 85%;
   height: 8vh;
-  background-color: blue;
+  background-color: beige;
 }
 .calculator .number-pad {
   width: 75%;
-  background-color: silver;
 }
 .calculator .number-pad:hover .btn-type-1 {
   width: 75%;
+  filter: brightness(0.4);
 }
-.calculator .number-pad:hover .btn-type-2 {
-  width: 75%;
+.calculator .number-pad:hover + .operations-pad .btn-type-2 {
+  font-weight: 900;
+  font-size: 2rem;
+}
+.calculator .number-pad:hover button:hover {
+  width: 85%;
+  filter: brightness(1);
 }
 .calculator .operations-pad {
   width: 25%;
-  background-color: black;
 }/*# sourceMappingURL=main.css.map */
